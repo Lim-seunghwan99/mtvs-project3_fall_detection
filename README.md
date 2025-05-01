@@ -29,7 +29,7 @@
 
 ## 🧩 데이터베이스 ERD
 
-![ERD](erd.png)
+<img src="erd.png" alt="SMS 확인 문자" width="400" height="400"/>
 
 ---
 
