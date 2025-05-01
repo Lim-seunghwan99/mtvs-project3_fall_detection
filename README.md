@@ -19,6 +19,13 @@
 
 ---
 
+## 📂 사용한 데이터
+
+- [AI 허브 – 낙상 데이터셋](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71641)
+
+
+---
+
 
 
 ## 🖼️ 시스템 아키텍처
