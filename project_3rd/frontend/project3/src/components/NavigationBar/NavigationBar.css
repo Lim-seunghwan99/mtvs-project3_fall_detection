@@ -1,0 +1,46 @@
+/* src/components/NavigationBar/NavigationBar.css */
+
+/* 네비게이션 바: 스티키, 회색 배경 */
+.navbar {
+  position: sticky;
+  top: 80px; /* <<< 헤더 높이(.header-content height)와 일치 */
+  background-color: #5a5a5a; /* 네비 배경: 회색 */
+  z-index: 999;
+  /* width: 100%; */ /* 제거 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 네비게이션 바 내부 콘텐츠: 최대 너비 및 중앙 정렬 */
+.navbar-content {
+  /* === 네비 내용 중앙 정렬 및 너비 제한 === */
+  max-width: 1280px; /* #root와 동일 */
+  margin: 0 auto; /* 중앙 정렬 */
+  display: flex;
+  align-items: center;
+  height: 45px; /* 네비 높이 (예시) */
+  padding: 0 2rem; /* 내부 좌우 여백 */
+  box-sizing: border-box;
+}
+
+/* 링크 스타일: 흰 글씨 */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px; /* 링크 간격 조정 */
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 12px; /* 패딩 조정 */
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active { /* 활성 링크 스타일 */
+  background-color: #777;
+}

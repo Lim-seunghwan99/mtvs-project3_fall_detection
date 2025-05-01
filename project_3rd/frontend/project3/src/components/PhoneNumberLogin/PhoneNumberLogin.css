@@ -1,0 +1,52 @@
+/* src/components/PhoneNumberLogin/PhoneNumberLogin.css */
+.phone-login-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 400px; /* 적절한 너비 설정 */
+  margin: 20px auto; /* 페이지 내 가운데 정렬 */
+  text-align: center;
+}
+
+.phone-login-container h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.phone-login-container p {
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input[type="tel"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #28a745; /* 녹색 계열 */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-group button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.input-group button:not(:disabled):hover {
+  background-color: #218838;
+}

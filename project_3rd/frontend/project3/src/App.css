@@ -1,0 +1,112 @@
+/* src/App.css */
+
+/* 앱 전체 컨테이너: Flex 및 높이 설정 */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* 부모(#root)의 높이를 따름 */
+  width: 100%;
+  /* === 내부 창 배경색 (메인 영역에서 관리) === */
+  /* background-color: #ffffff; /* 메인 영역만 밝게 하려면 여기서 제거 */
+}
+
+/* --- 헤더 스타일 --- */
+.App-header {
+  position: sticky;
+  top: 0; /* body 패딩 아래에서 고정 */
+  background-color: #4a4a4a; /* 헤더 배경: 회색 */
+  color: white; /* 헤더 글씨: 흰색 */
+  z-index: 1000;
+  /* width: 100%; */ /* 이 부분을 제거하거나 조정 필요 */
+  /* 그림자 효과 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 헤더 내부 콘텐츠: 최대 너비 및 중앙 정렬 적용 */
+.header-content {
+  max-width: 1280px; /* #root와 동일한 최대 너비 */
+  margin: 0 auto; /* 헤더 내용을 중앙에 배치 */
+  height: 80px; /* 헤더 높이 (예시) */
+  padding: 0 2rem; /* 내부 좌우 여백 */
+  box-sizing: border-box;
+
+  /* === Flexbox로 변경 === */
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  /* justify-content 제거 -> 각 요소가 공간 차지하도록 */
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: white;
+  /* === 제목이 중앙 공간 차지 === */
+  flex-grow: 1; /* 사용 가능한 공간 모두 차지 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  /* === 로그아웃 버튼 너비만큼 왼쪽 마진 추가 (균형 맞추기) === */
+  /* 정확한 값을 위해 실제 버튼 너비를 고려하거나, */
+  /* 버튼에 고정 너비를 주고 그만큼 마진을 주는 방식 사용 */
+  /* 예시: 버튼에 width: 150px; 가 있다면 margin-left: 150px; */
+  /* 또는 더 유연하게: 아래 버튼 스타일과 연동 */
+  margin-left: 100px; /* <<< 로그아웃 버튼 공간 확보 (조정 필요) */
+  padding-right: 100px; /* <<< 오른쪽 버튼 공간만큼 패딩 (균형) */
+}
+
+/* --- 메인 콘텐츠 영역 스타일 --- */
+.App-main {
+  flex-grow: 1; /* 남은 수직 공간 차지 */
+  width: 100%;
+  /* === 내부 창 배경색 및 스타일 === */
+  background-color: #ffffff; /* 메인 영역 배경: 밝은 색 (흰색) */
+  padding: 2rem; /* 내부 콘텐츠 여백 */
+  box-sizing: border-box;
+  border-radius: 8px; /* 모서리 둥글게 (선택 사항) */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 (선택 사항) */
+  margin-top: 1rem; /* 네비게이션 바와의 간격 (선택 사항) */
+  margin-bottom: 2rem; /* 하단 여백 */
+}
+
+/* --- 로그아웃 버튼 스타일 --- */
+/* .header-content 내부에 배치 */
+.logout-button {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  /* === 오른쪽 끝에 위치시키기 위한 마진 === */
+  margin-left: auto; /* 자동으로 왼쪽 여백 최대화 */
+  /* === 버튼 자체 너비 고정 (선택 사항, h1 마진 계산에 도움) === */
+  min-width: 100px; /* 최소 너비 지정 */
+  text-align: center;
+}
+
+.logout-button:hover {
+  background-color: #5a6268;
+}
+
+/* 반응형 로그아웃 버튼 (기존 스타일 활용 가능) */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* 수직 배치로 변경 */
+    height: auto; /* 높이 자동 조정 */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center; /* 중앙 정렬 */
+  }
+  .header-content h1 {
+    text-align: center;
+    margin: 0 0 0.5rem 0; /* 왼쪽/오른쪽 마진/패딩 제거, 아래쪽 마진 추가 */
+    padding: 0;
+    width: 100%; /* 전체 너비 사용 */
+  }
+  .logout-button {
+    margin: 0; /* 마진 초기화 */
+    width: auto; /* 너비 자동 */
+  }
+  /* 작은 화면에서 헤더/네비 높이 조정 가능 */
+}

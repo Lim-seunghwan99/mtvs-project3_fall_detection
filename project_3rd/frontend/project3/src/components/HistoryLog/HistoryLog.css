@@ -1,0 +1,51 @@
+/* src/components/HistoryLog/HistoryLog.css */
+.history-log-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-height: 300px; /* 필요시 스크롤 생성 */
+  overflow-y: auto; /* 내용 많아지면 스크롤 */
+}
+
+.history-log-container h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-entry {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column; /* 항목들을 세로로 나열 */
+  gap: 5px; /* 항목 간 간격 */
+  font-size: 0.9em;
+}
+
+.history-timestamp {
+  font-weight: bold;
+  color: #333;
+}
+
+.history-confidence {
+  color: #555;
+}
+
+.history-probabilities {
+  color: #777;
+  font-size: 0.85em;
+  word-break: break-all; /* 긴 확률값 줄바꿈 */
+}
