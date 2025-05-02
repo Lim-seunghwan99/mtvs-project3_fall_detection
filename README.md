@@ -63,7 +63,7 @@
 ## 🔧 기술 스택
 
 - **Frontend**: React
-- **Backend**: FastAPI  
+- **Backend**: FastAPI, Python
 - **AI Model**: PyTorch 기반 LSTM 분류기  
 - **Database**: PostgreSQL  
 - **solapi**: SMS 전송 API
@@ -78,3 +78,48 @@
 - `database` : WSL에 설치 PostgreSQL
 - `model` : LSTM 모델 학습 및 평가 코드(PyTorch)
 
+---
+
+## 포팀 메뉴얼
+#### 백엔드 설치 및 실행
+pip install -r requirements.txt   (python 패키지 설치)
+uvicorn project_3rd.backend.fall_detection:app --reload
+
+#### 프론트엔드 설치 및 실행행
+cd project_3rd/frontend/project3
+npm ci  
+(이 프로젝트의 의존성은 package.json 및 package-lock.json을 기준으로 관리됩니다. 하지만 참고용으로 설치된 패키지 목록이 dependencies.txt에 백업되어 있습니다.)
+(npm list --depth=0 > dependencies.txt 해당 명령어로 생성되었습니다.)
+npm run dev
+
+#### DB 실행
+cmd > wsl  (DB는 wsl에 설치됨, backend에서 DB의 테이블이 없다면 생성하는 코드 있음.)
+sudo service postgresql start
+
+#### 환경변수
+backend/.env
+
+DATABASE_URL='postgresql://postgres:비밀번호@localhost:5432/DB이름'
+API_KEY = 'Solapi API KEY'
+API_SECRET = 'Solapi API SECRET'
+
+frontend/project3/src/config/constants.js
+export const WS_URL = WebSocket URL 지정  
+export const API_BASE_URL = FastAPI URL 지정
+
+
+---
+#### 주요 기술 버전
+Python 3.12.9
+React 19.1.0
+psql Ubuntu 14.17-0ubuntu0.22.04.1
+
+websocket-client==1.8.0
+fastapi==0.115.12
+uvicorn==0.34.2
+torch==2.6.0+cu124
+scikit-learn==1.6.1
+opencv-python==4.11.0.86
+
+tensorflow-models/pose-detection": "^2.1.3"
+@mediapipe/pose": "^0.5.1675469404"
